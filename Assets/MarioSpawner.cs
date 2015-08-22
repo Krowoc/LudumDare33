@@ -38,7 +38,6 @@ public class MarioSpawner : MonoBehaviour {
 		{
 			GameObject mario = Instantiate(Resources.Load(Mario.name, typeof(GameObject))) as GameObject;
 			mario.transform.position = transform.position;
-			body_Mario.velocity = (Vector2.right * 10);
 
 
 			yield return new WaitForSeconds(delayInSeconds);
