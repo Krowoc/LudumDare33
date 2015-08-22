@@ -16,14 +16,17 @@ public class MarioSpawner : MonoBehaviour {
 	{
 
 		StartCoroutine ("Spawn");
+		increaseInTime = decreaseInTime;
 
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		//Decrease the seconds in with to decrease the delay time
 		decreaseInTime -= Time.deltaTime;
 
+		//Decreases the delay time and resets decrease in Time;
 		if (decreaseInTime <= 0) 
 			{
 			    decreaseInTime += increaseInTime;
