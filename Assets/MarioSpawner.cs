@@ -5,7 +5,6 @@ public class MarioSpawner : MonoBehaviour {
 
 
 	public GameObject Mario;
-	public GameObject clonedMario;
 	public float      delayInSeconds;
 	public bool       isActive= true;
 	public float      decreaseInTime;
@@ -40,8 +39,8 @@ public class MarioSpawner : MonoBehaviour {
 	{
 		while (isActive) 
 		{
-			clonedMario = Instantiate(Resources.Load(Mario.name, typeof(GameObject))) as GameObject;
-			clonedMario.transform.position = transform.position;
+			GameObject mario = Instantiate(Resources.Load(Mario-sheet_0.name, typeof(GameObject))) as GameObject;
+			mario.transform.position = transform.position;
 
 
 			yield return new WaitForSeconds(delayInSeconds);
