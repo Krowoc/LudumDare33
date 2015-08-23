@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="25" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="MarioTiles" tilewidth="32" tileheight="32" spacing="2" tilecount="143">
+  <image source="../../../smb_tilesx2.png" width="440" height="372"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="5">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="26">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="27">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="28">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="40">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Sky" width="50" height="25">
+  <properties>
+   <property name="unity:sortingLayerName" value="Sky"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztw0ENAAAMA6EzXf9TsR8krJqqqqqq+voAz/Q7aQ==
+  </data>
+ </layer>
+ <layer name="Background" width="50" height="25">
+  <properties>
+   <property name="unity:sortingLayerName" value="Background"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0TESgjAQheGISimegANA7YQauQA90Iv3730pnFkzZsiY4Dbvm/kLmrCbGENERET0PxOa0aI9SKIHWtEz8RzeBzm19gAZNKjVHiKTzvu+iWKUIk3+Hj2yaFCYJYXcw73BKNp6k2KHeX49U+5hvxRyQRW6Rv7niE7onPHMkPfsd/O5x4ExFuwFgOgMLQ==
+  </data>
+ </layer>
+ <layer name="Midground" width="50" height="25">
+  <properties>
+   <property name="unity:sortingLayerName" value="Midground"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1rENgDAMRFFXLEHoYQv2nwrXFEEnkviK/yR3kZ2r7Ig1zqxr0ayZyOGFHF7I4YUcXsjhZY+4W1b1PwDMsb2qcj685T6IZthL1dvP6r++dv0h9FL1Zqs3SOXNQo7/70dyy/EA3ewJjQ==
+  </data>
+ </layer>
+ <layer name="Foreground" width="50" height="25">
+  <properties>
+   <property name="unity:sortingLayerName" value="Foreground"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20KP6AAAAAAgLcBE4gAAQ==
+  </data>
+ </layer>
+</map>
