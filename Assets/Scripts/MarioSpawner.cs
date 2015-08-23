@@ -4,7 +4,7 @@ using System.Collections;
 public class MarioSpawner : MonoBehaviour {
 
 
-	public string prefabName;
+	public string     prefabName;
 	public float      delayInSeconds;
 	//public bool       isActive= true;
 	//public float      decreaseInTime;

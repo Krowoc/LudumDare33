@@ -73,11 +73,15 @@ public class Mario : MonoBehaviour {
 	{
 		audioSource.Play ();
 
+		GetComponent<Renderer>().enabled = false;
+
 		while(audioSource.isPlaying)
 		{
 			yield return null;
 		}
 
 		Destroy (gameObject);
+
+
 	}
 }
