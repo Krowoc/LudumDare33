@@ -12,7 +12,8 @@ public class TriggerDestroy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		audioSource.Play ();
+		if(audioSource != null)
+			audioSource.Play ();
 
 		Destroy (other.gameObject);
 		/*Mario mario = other.GetComponent<Mario>();
