@@ -9,71 +9,100 @@ public class PlayerPlant : MonoBehaviour {
 	public float       moveDistance;
 	public float       lerpTime;
 	public float       currentLerpTime;
-	public bool        atBase = true;
-	                   GameObject  baseCheck;
+	public float       attackHeight;
+	public float       startingHeight;
+	public float       seconds;
+	public bool        buttonPress;
 
 	// Use this for initialization
 	void Start () 
 	{
-//		baseCheck = transform.FindChild ("baseCheck").gameObject;
+		//startingHeight = transform.position.y;
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
 		if (Input.GetButtonDown ("Fire1")) 
 		{   
-//			atBase = GroundTest();
-//			if(atBase){
-			 	currentLerpTime = 0f;
-				plant = GameObject.FindGameObjectWithTag("player1");
-				Attack ();
-//			  }
+			if (buttonPress == false)
+			{
+			  plant = GameObject.FindGameObjectWithTag("player1");
+			  startingHeight = plant.transform.position.y;
+			  StartCoroutine("Attack");
+			}
+
+
 		} 
 		else if (Input.GetButtonDown ("Fire2")) 
 		{
-			currentLerpTime = 0f;
-			plant = GameObject.FindGameObjectWithTag("player2");
-			Attack ();
+			if (buttonPress == false)
+			{
+				plant = GameObject.FindGameObjectWithTag("player2");
+				startingHeight = plant.transform.position.y;
+				StartCoroutine("Attack");
+			}
 		} 
 		else if (Input.GetButtonDown ("Fire3")) 
 		{
+			if (buttonPress == false)
+			{
+				plant = GameObject.FindGameObjectWithTag("player3");
+				startingHeight = plant.transform.position.y;
+				StartCoroutine("Attack");
+			}
+		}
+
+	}
+	
+	void OnTriggerStay2D(Collider2D other)
+	{
+		Mario mario = other.GetComponent<Mario>();
+		if (mario != null)
+			Destroy (mario);
+	}
+
+IEnumerator Attack()
+{
+	buttonPress = true;
+	
+	while (plant.transform.position.y < attackHeight) 
+		{
+
 			currentLerpTime = 0f;
-			plant = GameObject.FindGameObjectWithTag("player3");
-			Attack ();
+
+			startpos = plant.transform.position; 
+			endpos = plant.transform.position + transform.up * moveDistance;
+		
+			currentLerpTime += Time.deltaTime;
+			if (currentLerpTime > lerpTime) {
+				currentLerpTime = lerpTime;
+			}
+		
+			float perc = currentLerpTime / lerpTime;
+			plant.transform.position = Vector3.Lerp (startpos, endpos, perc);
+
+			yield return null;
 		}
 
-	}
-
-//	bool GroundTest()
-//	{
-//		return Physics2D.Raycast (baseCheck.transform.position, Vector2.down, 0.1f);
-//	}
-
-	void OnCollisionEnter2D(Collision2D coll) 
-	{
-
-		if (coll.gameObject.name == "Mario(Clone)") 
+		while (plant.transform.position.y > startingHeight) 
 		{
-			Debug.Log("Mario collided with plant");
-			Destroy(coll.gameObject);
-		} 
-	}
-
-	void Attack()
-	{
-		startpos = plant.transform.position; 
-		endpos = plant.transform.position + transform.up * moveDistance;
-		
-		currentLerpTime += Time.deltaTime;
-		if (currentLerpTime > lerpTime) 
-		{
-			currentLerpTime = lerpTime;
+			currentLerpTime = 0f;
+			
+			startpos = plant.transform.position; 
+			endpos = plant.transform.position + -transform.up * moveDistance;
+			
+			currentLerpTime += Time.deltaTime;
+			if (currentLerpTime > lerpTime) {
+				currentLerpTime = lerpTime;
+			}
+			
+			float perc = currentLerpTime / lerpTime;
+			plant.transform.position = Vector3.Lerp (startpos, endpos, perc);
+			yield return null;
 		}
-		
-		float perc = currentLerpTime / lerpTime;
-		plant.transform.position = Vector3.Lerp(startpos, endpos, perc);
-		plant.transform.position = Vector3.Lerp(endpos, startpos, perc);
+
+		buttonPress = false;
 	}
 
 
