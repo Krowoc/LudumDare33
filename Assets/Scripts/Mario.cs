@@ -24,14 +24,13 @@ public class Mario : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		onGround = GroundTest();
 
 		if(onGround)
 			Run ();
 
-		//Jump ();
 	}
 
 	bool GroundTest()
@@ -43,14 +42,21 @@ public class Mario : MonoBehaviour {
 	{
 		rigidBody.AddForce (new Vector2(speed, 0f));
 
-		rigidBody.velocity = Vector2.ClampMagnitude (rigidBody.velocity, maxSpeed);
+		//rigidBody.velocity = Vector2.ClampMagnitude (rigidBody.velocity, maxSpeed);
+
+		Vector2 newVelocity = rigidBody.velocity;
+
+		newVelocity.x = Mathf.Clamp (newVelocity.x, 0f, maxSpeed);
+
+		rigidBody.velocity = newVelocity;
 	}
 
 	public void Jump()
 	{
 		if(onGround)
 		{
-			rigidBody.AddForce (new Vector2(0f, jumpForce));
+			rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);//
+			//rigidBody.AddForce (new Vector2(0f, jumpForce));
 		}
 	}
 

@@ -3,24 +3,16 @@ using System.Collections;
 
 public class Trigger : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public int chanceToTrigger;
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
-		Mario mario = other.GetComponent<Mario>();
+		if(Random.Range (0, 100) <= chanceToTrigger)
+		{
+			Mario mario = other.GetComponent<Mario>();
 
-		mario.Jump ();
-		Debug.Log (mario);
-
-		if(mario != null)
-			mario.Jump ();
+			if(mario != null)
+				mario.Jump ();
+		}
 	}
 }
