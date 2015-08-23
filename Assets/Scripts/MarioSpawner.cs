@@ -6,17 +6,17 @@ public class MarioSpawner : MonoBehaviour {
 
 	public string prefabName;
 	public float      delayInSeconds;
-	public bool       isActive= true;
-	public float      decreaseInTime;
+	//public bool       isActive= true;
+	//public float      decreaseInTime;
 	public float      decreaseDelay;
-	public float      increaseInTime;
+	//public float      increaseInTime;
 
 	// Use this for initialization
 	void Start () 
 	{
 
 		StartCoroutine ("Spawn");
-		increaseInTime = decreaseInTime;
+		//increaseInTime = decreaseInTime;
 
 	}
 	
@@ -24,20 +24,20 @@ public class MarioSpawner : MonoBehaviour {
 	void Update () 
 	{
 		//Decrease the seconds in with to decrease the delay time
-		decreaseInTime -= Time.deltaTime;
+		/*decreaseInTime -= Time.deltaTime;
 
 		//Decreases the delay time and resets decrease in Time;
 		if (decreaseInTime <= 0) 
 			{
 			    decreaseInTime += increaseInTime;
-				delayInSeconds -= decreaseDelay;
-			}
+				//delayInSeconds -= decreaseDelay;
+			}*/
 	
 	}
 
 	IEnumerator Spawn()
 	{
-		while (isActive) 
+		while (true) 
 		{
 			GameObject mario = Instantiate(Resources.Load(prefabName, typeof(GameObject))) as GameObject;
 			mario.transform.position = transform.position;
@@ -45,6 +45,7 @@ public class MarioSpawner : MonoBehaviour {
 
 			yield return new WaitForSeconds(delayInSeconds);
 
+			delayInSeconds -= decreaseDelay;
 		}
 	}
 }

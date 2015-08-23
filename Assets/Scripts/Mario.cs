@@ -12,12 +12,15 @@ public class Mario : MonoBehaviour {
 
 	Rigidbody2D rigidBody;
 
+	AudioSource audioSource;
+
 	GameObject groundCheck;
 
 	// Use this for initialization
 	void Start () {
 
 		rigidBody = GetComponent<Rigidbody2D>();
+		audioSource = GetComponent<AudioSource>();
 
 		groundCheck = transform.Find ("GroundCheck").gameObject;
 
@@ -62,6 +65,19 @@ public class Mario : MonoBehaviour {
 
 	public void Die()
 	{
+		StartCoroutine (Death ());
+
+	}
+
+	IEnumerator Death()
+	{
+		audioSource.Play ();
+
+		while(audioSource.isPlaying)
+		{
+			yield return null;
+		}
+
 		Destroy (gameObject);
 	}
 }

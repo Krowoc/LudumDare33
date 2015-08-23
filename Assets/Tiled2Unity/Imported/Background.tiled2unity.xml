@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 8/23/2015 6:59:27 AM-->
+<!--Last exported: 8/23/2015 2:22:21 PM-->
 <Tiled2Unity version="0.9.11.2">
   <AssignMaterial mesh="mesh_[00]_[00]" material="smb_tilesx2" sortingLayerName="Sky" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[00]" material="smb_tilesx2" sortingLayerName="Background" sortingOrder="1" />
@@ -28,7 +28,6 @@
           <Path>10,-17 7,-17 7,-18 10,-18</Path>
           <Path>35,-25 35,-19 33,-19 33,-25</Path>
           <Path>16,-25 16,-19 14,-19 14,-25</Path>
-          <Path>42,-20 41,-20 41,-21 42,-21</Path>
           <Path>23,-20 21,-20 21,-25 23,-25</Path>
         </PolygonCollider2D>
       </GameObject>
