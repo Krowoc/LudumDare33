@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour {
 	void Start () {
 
 		spawner = GameObject.Find ("Spawner").GetComponent<MarioSpawner>();
-	
+
 	}
 	
 	// Update is called once per frame
@@ -37,6 +37,5 @@ public class Manager : MonoBehaviour {
 		}
 
 	}
-
 
 }

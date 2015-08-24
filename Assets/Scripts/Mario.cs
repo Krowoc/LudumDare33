@@ -65,13 +65,20 @@ public class Mario : MonoBehaviour {
 
 	public void Die()
 	{
-		StartCoroutine (Death ());
+		AudioSource sound = GameObject.Find ("Sound").GetComponent<AudioSource>();
+
+		if(!sound.isPlaying)
+			sound.Play ();
+
+		ScoreCounter.instance().marioEaten ();
+
+		Destroy (gameObject);
+		//StartCoroutine (Death ());
 
 	}
 
-	IEnumerator Death()
+	/*IEnumerator Death()
 	{
-		ScoreCounter.instance().marioEaten ();
 		audioSource.Play ();
 
 		GetComponent<Renderer>().enabled = false;
@@ -84,5 +91,5 @@ public class Mario : MonoBehaviour {
 		Destroy (gameObject);
 
 
-	}
+	}*/
 }
