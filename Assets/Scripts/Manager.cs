@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour {
 
 		spawner = GameObject.Find ("Spawner").GetComponent<MarioSpawner>();
 
+		//ScoreManager.singleton.getScore ();
 	}
 	
 	// Update is called once per frame

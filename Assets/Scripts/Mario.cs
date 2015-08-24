@@ -45,8 +45,6 @@ public class Mario : MonoBehaviour {
 	{
 		rigidBody.AddForce (new Vector2(speed, 0f));
 
-		//rigidBody.velocity = Vector2.ClampMagnitude (rigidBody.velocity, maxSpeed);
-
 		Vector2 newVelocity = rigidBody.velocity;
 
 		newVelocity.x = Mathf.Clamp (newVelocity.x, 0f, maxSpeed);
@@ -59,7 +57,6 @@ public class Mario : MonoBehaviour {
 		if(onGround)
 		{
 			rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);//
-			//rigidBody.AddForce (new Vector2(0f, jumpForce));
 		}
 	}
 
@@ -69,26 +66,10 @@ public class Mario : MonoBehaviour {
 			sound.Play ();
 
 		//ScoreCounter.instance().marioEaten ();
-		ScoreManager.singleton.marioEaten ();
+		ScoreManager.marioEaten ();
 
 		Destroy (gameObject);
-		//StartCoroutine (Death ());
 
 	}
 
-	/*IEnumerator Death()
-	{
-		audioSource.Play ();
-
-		GetComponent<Renderer>().enabled = false;
-
-		while(audioSource.isPlaying)
-		{
-			yield return null;
-		}
-		
-		Destroy (gameObject);
-
-
-	}*/
 }

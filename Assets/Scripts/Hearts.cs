@@ -7,7 +7,7 @@ public class Hearts : MonoBehaviour {
 	[SerializeField]
 	public List<GameObject> hearts = new List<GameObject>();
 
-	int lives;
+	public int lives;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class Hearts : MonoBehaviour {
 
 	}
 
-	public void LoseLife()
+	public int LoseLife()
 	{
 		lives -= 1;
 
@@ -36,5 +36,7 @@ public class Hearts : MonoBehaviour {
 			ScoreManager.singleton.EndLevel ();
 
 		}
+
+		return(lives);
 	}
 }
