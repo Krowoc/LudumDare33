@@ -14,6 +14,12 @@ public class Manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown (KeyCode.Escape))
+		{
+			Application.LoadLevel("TitleScreen");
+		}
+
 		if(Input.GetKeyDown (KeyCode.Equals))
 		{
 			spawner.DecreaseDelay ();
