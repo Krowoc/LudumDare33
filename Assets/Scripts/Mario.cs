@@ -71,6 +71,7 @@ public class Mario : MonoBehaviour {
 
 	IEnumerator Death()
 	{
+		ScoreCounter.instance().marioEaten ();
 		audioSource.Play ();
 
 		GetComponent<Renderer>().enabled = false;
@@ -79,7 +80,7 @@ public class Mario : MonoBehaviour {
 		{
 			yield return null;
 		}
-
+		
 		Destroy (gameObject);
 
 
