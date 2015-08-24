@@ -12,9 +12,11 @@ public class TriggerDestroy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		ScoreCounter.instance().marioSurvived ();
+
 		if(audioSource != null)
 			audioSource.Play ();
-
+		
 		Destroy (other.gameObject);
 		/*Mario mario = other.GetComponent<Mario>();
 			
