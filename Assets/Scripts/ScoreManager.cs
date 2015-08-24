@@ -13,6 +13,7 @@ public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
 	private Text scoreDisplay;
 	private Text hiScoreDisplay;
 
+	private Hearts hearts;
 
 	// Use this for initialization
 	void Awake () {
@@ -20,6 +21,7 @@ public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
 		hiScore = PlayerPrefs.GetInt ("HiScore", 0);
 		scoreDisplay = GameObject.Find("Score").GetComponent<Text>();
 		hiScoreDisplay = GameObject.Find("HiScore").GetComponent<Text>();
+		hearts = GameObject.Find ("Hearts").GetComponent<Hearts>();
 	}
 	
 	// Update is called once per frame
@@ -51,5 +53,12 @@ public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
 		if (score < 0)
 			score = 0;
 		updateText ();
+
+		hearts.LoseLife ();
+	}
+
+	public void EndLevel()
+	{
+		Debug.Log ("End");
 	}
 }

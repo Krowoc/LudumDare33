@@ -20,8 +20,9 @@ public class Plant : MonoBehaviour {
 
 	bool isAttacking = false;
 
-	AudioSource[] sounds;
+	static int numOfPlants = 3;
 
+	AudioSource[] sounds;
 	Animator anim;
 
 	// Use this for initialization
@@ -81,6 +82,10 @@ public class Plant : MonoBehaviour {
 	void Die()
 	{
 		sounds[1].Play ();
+		numOfPlants -= 1;
+
+		if(numOfPlants <= 0)
+			ScoreManager.singleton.EndLevel ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
