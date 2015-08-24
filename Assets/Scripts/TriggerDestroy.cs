@@ -12,7 +12,8 @@ public class TriggerDestroy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		ScoreCounter.instance().marioSurvived ();
+		//ScoreCounter.instance().marioSurvived ();
+		ScoreManager.singleton.marioSurvived ();
 
 		if(audioSource != null)
 			audioSource.Play ();

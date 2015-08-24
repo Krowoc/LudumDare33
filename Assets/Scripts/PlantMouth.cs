@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlantMouth : MonoBehaviour {
 
-	AudioSource audioSource;
+	/*AudioSource sound;
 
 	// Use this for initialization
 	void Start () {
-		audioSource = GetComponent<AudioSource>();
+		sound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -17,17 +17,17 @@ public class PlantMouth : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		audioSource.Play ();
+		sound.Play ();
 
 		Mario mario = other.GetComponent<Mario>();
 
 		if(mario != null)
 		{
-			mario.transform.SetParent (gameObject.transform);
+			//mario.transform.SetParent (gameObject.transform);
 			mario.Die ();
 
 		}
 			
 
-	}
+	}*/
 }

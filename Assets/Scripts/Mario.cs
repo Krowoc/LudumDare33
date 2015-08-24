@@ -12,7 +12,7 @@ public class Mario : MonoBehaviour {
 
 	Rigidbody2D rigidBody;
 
-	AudioSource audioSource;
+	AudioSource sound;
 
 	GameObject groundCheck;
 
@@ -20,7 +20,7 @@ public class Mario : MonoBehaviour {
 	void Start () {
 
 		rigidBody = GetComponent<Rigidbody2D>();
-		audioSource = GetComponent<AudioSource>();
+		sound = GameObject.Find ("Sound").GetComponent<AudioSource>();
 
 		groundCheck = transform.Find ("GroundCheck").gameObject;
 
@@ -65,12 +65,11 @@ public class Mario : MonoBehaviour {
 
 	public void Die()
 	{
-		AudioSource sound = GameObject.Find ("Sound").GetComponent<AudioSource>();
-
 		if(!sound.isPlaying)
 			sound.Play ();
 
-		ScoreCounter.instance().marioEaten ();
+		//ScoreCounter.instance().marioEaten ();
+		ScoreManager.singleton.marioEaten ();
 
 		Destroy (gameObject);
 		//StartCoroutine (Death ());
