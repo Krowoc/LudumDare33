@@ -13,7 +13,10 @@ public class MainMenu : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Escape))
 		{
-			Application.Quit ();
+			if(Application.loadedLevel == 0)
+				Application.Quit ();
+			else
+				OnBackButton ();
 		}
 	}
 
@@ -24,7 +27,12 @@ public class MainMenu : MonoBehaviour {
 
 	public void OnCreditsButton()
 	{
+		Application.LoadLevel ("Credits");
+	}
 
+	public void OnBackButton()
+	{
+		Application.LoadLevel ("TitleScreen");
 	}
 
 	public void OnExitButton()

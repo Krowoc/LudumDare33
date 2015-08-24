@@ -5,12 +5,14 @@ public class Manager : MonoBehaviour {
 
 	MarioSpawner spawner;
 
+	public GameObject pauseMenu;
+
 	// Use this for initialization
 	void Start () {
 
 		spawner = GameObject.Find ("Spawner").GetComponent<MarioSpawner>();
 
-		//ScoreManager.singleton.getScore ();
+		//pauseMenu = GameObject.Find ("Pause");
 	}
 	
 	// Update is called once per frame
@@ -18,7 +20,18 @@ public class Manager : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Escape))
 		{
-			Application.LoadLevel("TitleScreen");
+			if(pauseMenu.activeSelf)
+			{
+				CloseMenu ();
+			}
+			else 
+			{
+				ScoreManager.isPaused = true;
+				pauseMenu.SetActive (true);
+				AudioListener.volume = 0;
+				Time.timeScale = 0.000000001f;//0.0f;//
+			}
+
 		}
 
 		if(Input.GetKeyDown (KeyCode.Equals))
@@ -37,6 +50,31 @@ public class Manager : MonoBehaviour {
 			spawner.SpawnMario ();
 		}
 
+	}
+
+	public void CloseMenu()
+	{
+		ScoreManager.isPaused = false;
+		pauseMenu.SetActive (false);
+		Time.timeScale = 1;
+		AudioListener.volume = 1;
+	}
+	
+	public void OnResume()
+	{
+		CloseMenu ();
+	}
+	
+	public void OnMainMenuButton()
+	{
+		CloseMenu ();
+		Application.LoadLevel ("TitleScreen");
+	}
+	
+	public void OnExitButton()
+	{
+		CloseMenu ();
+		Application.Quit ();
 	}
 
 }

@@ -39,6 +39,9 @@ public class Plant : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if(ScoreManager.isPaused)
+			return;
+
 		if (life > 0)
 		{
 			life -= lifeDrain;

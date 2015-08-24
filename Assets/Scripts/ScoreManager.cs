@@ -15,6 +15,8 @@ public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
 
 	private Hearts hearts;
 
+	public static bool isPaused;
+
 	// Use this for initialization
 	void Awake () {
 		//score = 0;
