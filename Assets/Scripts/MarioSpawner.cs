@@ -34,7 +34,9 @@ public class MarioSpawner : MonoBehaviour {
 
 			yield return new WaitForSeconds(delayInSeconds);
 
-			DecreaseDelay ();
+			DecreaseDelay();
+			delayInSeconds = 7 - Mathf.Log(ScoreCounter.instance ().getScore () + 100);
+			//Debug.Log (delayInSeconds.ToString());
 		}
 	}
 
@@ -46,15 +48,15 @@ public class MarioSpawner : MonoBehaviour {
 	}
 
 	public void DecreaseDelay()
-	{
+	{/*
 		delayInSeconds -= decreaseDelay;
 
 		if(delayInSeconds < 0.0f)
 			delayInSeconds = 0.0f;
-	}
+	*/}
 
 	public void IncreaseDelay()
-	{
+	{/*
 		delayInSeconds += decreaseDelay;
-	}
+	*/}
 }
