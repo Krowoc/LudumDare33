@@ -5,9 +5,9 @@ public class Plant : MonoBehaviour {
 
 	public string button;
 
-	public float attackHeight;
-	public float attackSpeed = 0.01f;
-	public float speed;
+	public float attackHeight = 5.0f;
+	public float attackSpeed = 0.1f;
+	public float retractSpeed = 10.0f;
 
 	Vector2 attackingPosition;
 	Vector2 startingPosition;
@@ -49,7 +49,7 @@ public class Plant : MonoBehaviour {
 		
 		while(transform.position.y > startingPosition.y + close)
 		{
-			transform.position = Vector2.Lerp (transform.position, startingPosition, Time.deltaTime * speed);
+			transform.position = Vector2.Lerp (transform.position, startingPosition, Time.deltaTime * retractSpeed);
 				
 			yield return null;
 		}

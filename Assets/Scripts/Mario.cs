@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Mario : MonoBehaviour {
 
-	public float speed = 500.0f;
-	public float maxSpeed = 40.0f;
+	public float speed = 50.0f;
+	public float maxSpeed = 8.0f;
 
-	public float jumpForce = 1000.0f;
+	public float jumpForce = 20.0f;
 
 	public bool onGround;
 
