@@ -8,6 +8,11 @@ public class ScoreCounter {
 	private long score;
 	private Text scoreDisplay;
 
+	public long getScore()
+	{
+		return score;
+	}
+
 	public static ScoreCounter instance()
 	{
 		if (ScoreCounter._instance == null)
