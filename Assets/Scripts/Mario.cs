@@ -16,6 +16,10 @@ public class Mario : MonoBehaviour {
 
 	GameObject groundCheck;
 
+	Vector3 lastPosition = Vector2.zero;
+	Quaternion originalRotation;
+	int stuck;
+
 	// Use this for initialization
 	void Start () {
 
@@ -24,6 +28,7 @@ public class Mario : MonoBehaviour {
 
 		groundCheck = transform.Find ("GroundCheck").gameObject;
 
+		originalRotation = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +39,23 @@ public class Mario : MonoBehaviour {
 		if(onGround)
 			Run ();
 
+	}
+
+	void Update()
+	{
+		if(lastPosition == transform.position)
+		{
+			if(stuck++ == 150)
+			{
+				//stuck = 0;
+				//lastPosition = transform.position;
+				//transform.rotation = originalRotation;
+				Destroy (gameObject);
+			}
+
+		}
+		else
+			lastPosition = transform.position;
 	}
 
 	bool GroundTest()
