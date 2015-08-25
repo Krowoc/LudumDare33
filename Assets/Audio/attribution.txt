@@ -1,0 +1,96 @@
+Main Track:
+	Title: Bit Bossa
+	Artist: AzureFlux
+	License: CC-BY-SA ( http://creativecommons.org/licenses/by-nc-sa/4.0/ )
+	URL: https://freemusicarchive.org/music/Azureflux/Pocket_Boy/07_azureflux_-_bit_bossa
+	File: Azureflux_-_07_-_Bit_Bossa-trimmed.ogg
+	Modifications: trimmed to better support looping
+	
+Title / Credits Track:
+	Title: 
+	Artist: 
+	License: 
+	URL:
+	File:
+	Modifications: trimmed to better support looping
+
+Game Over Sound:
+	Title: Lost Life Game Over
+	Artist: noirenex
+	License: Creative Commons 0 ( http://creativecommons.org/publicdomain/zero/1.0/ )
+	File: 159408__noirenex__life-lost-game-over.wav
+	URL: https://freesound.org/people/noirenex/sounds/159408/
+	Modifications: None
+
+Mario Scream:
+	Title: Wilhelm Scream
+	Artist: 
+	License: Public Domain 
+	URL:
+	File:
+	Modifications: None
+
+Alternate Marrio Death Sound:
+	Title: carrotnom.wav
+	Artist: j1987
+	License: Creative Commons 0 ( http://creativecommons.org/publicdomain/zero/1.0/ )
+	URL: https://freesound.org/people/j1987/sounds/106392/
+	File: 106392__j1987__carrotnom.wav
+	Modifications: None
+
+Menu Selection Click:
+	Title: Menu Selection Click
+	Artist: NenadSimic
+	License: Creative Commons 0 ( http://creativecommons.org/publicdomain/zero/1.0/ )
+	URL: https://freesound.org/people/NenadSimic/sounds/171697/
+	File: 171697__nenadsimic__menu-selection-click.wav
+	Modifications: None
+
+Game Start:
+	Title: Game Start
+	Artist: plasterbrain
+	License: Creative Commons 0 ( http://creativecommons.org/publicdomain/zero/1.0/ )
+	URL: https://freesound.org/people/plasterbrain/sounds/243020/
+	File: 243020__plasterbrain__game-start.wav
+	Modifications:
+
+Level Up Sound:
+	Title: 23.wav
+	Artist: B_Lamerichs
+	License: Creative Commons 0 ( http://creativecommons.org/publicdomain/zero/1.0/ )
+	URL: https://freesound.org/people/B_Lamerichs/sounds/219715/
+	File: 219715__b-lamerichs__23.wav
+	Modifications: None
+
+Power Up Sound:
+	Title: 7.wav
+	Artist: B_Lamerichs
+	License: Creative Commons 0 ( http://creativecommons.org/publicdomain/zero/1.0/ )
+	URL: https://freesound.org/people/B_Lamerichs/sounds/219720/
+	File: 219715__b-lamerichs__7.wav
+	Modifications: None
+
+Mario Spawn Sound:
+	Title: 
+	Artist: 
+	License: 
+	URL:
+	File:
+	Modifications: 
+
+Plant Death Sound:
+	Title: 
+	Artist: 
+	License: 
+	URL:
+	File:
+	Modifications: 
+
+Mario gets to the goal:
+	Title: 
+	Artist: 
+	License: 
+	URL:
+	File:
+	Modifications: 
+

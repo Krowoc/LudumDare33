@@ -4,10 +4,16 @@ using System.Collections;
 public class Trigger : MonoBehaviour {
 
 	public int chanceToTrigger;
+	public int rnd;
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		rnd = Random.Range (0, 100);
+	}
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-		if(Random.Range (0, 100) <= chanceToTrigger)
+		if(rnd <= chanceToTrigger)
 		{
 			Mario mario = other.GetComponent<Mario>();
 
